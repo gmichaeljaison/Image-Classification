@@ -13,6 +13,8 @@ function feat = extract_feature(image)
 % VLFeat must be added to MATLAB search path. Please check the link below.
 % http://www.vlfeat.org/install-matlab.html
 
+% run('~/Documents/MATLAB/vlfeat-0.9.20/toolbox/vl_setup')
+
 
 %% check input data type
 if ~isa(image, 'single'), image = single(image); end;
@@ -21,8 +23,8 @@ if ~isa(image, 'single'), image = single(image); end;
 %% extract HOG 
 cellSize = 8;
 hog = vl_hog(image, cellSize, 'verbose');
-imhog = vl_hog('render', hog, 'verbose');
-clf; imagesc(imhog); colormap gray;
+% imhog = vl_hog('render', hog, 'verbose');
+% clf; imagesc(imhog); colormap gray;
 
 
 %% feature - vectorized HOG descriptor
