@@ -29,6 +29,9 @@ classTrain = class(1:4000);
 xTest = X(4001:5000,:);
 classTest = class(4001:5000);
 
+[xTrain, classTrain] = pickSubData(xTrain, classTrain, 10);
+[xTest, classTest] = pickSubData(xTest, classTest, 1);
+
 Model = train(xTrain, classTrain);
 predClass = classify(Model, xTest);
 
