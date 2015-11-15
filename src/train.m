@@ -2,6 +2,6 @@ function [ Model ] = train( trainX, labelX )
 
     im_features = extractFeatures(trainX);
     
-    Model = fitNaiveBayes(im_features, labelX);
+    Model = fitcknn(im_features, labelX,'NumNeighbors',10,'Standardize',1);
 
 end

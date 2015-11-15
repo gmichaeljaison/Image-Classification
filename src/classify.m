@@ -2,6 +2,6 @@ function [ Y ] = classify( Model, X )
 
     im_features = extractFeatures(X);
 
-    Y = Model.predict(im_features);
+    Y = predict(Model, im_features);
 
 end
