@@ -29,7 +29,8 @@ classTrain = class(1:4000);
 xTest = X(4001:5000,:);
 classTest = class(4001:5000);
 
-Model = train(xTrain, classTrain);
+Model = train(X, class);
+
 predClass = classify(Model, xTest);
 
 C = confusionmat(classTest, predClass);

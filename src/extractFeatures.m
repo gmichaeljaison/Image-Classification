@@ -6,10 +6,10 @@ function [ X_features ] = extractFeatures( X )
     imgs = convertDataToImages(X);
 
 %   2. extract hog features
-    X_features = zeros(n, 8*8*31);
+    X_features = [];
     for i = 1 : size(imgs, 4)
         im = imgs(:,:,:,i);
-        X_features(i,:) = extract_feature(im);
+        X_features(end+1,:) = extract_feature(im);
     end
 
 end
